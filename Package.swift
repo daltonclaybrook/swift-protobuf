@@ -1,4 +1,4 @@
-// swift-tools-version:4.2
+// swift-tools-version:5.1
 
 // Package.swift
 //
@@ -13,6 +13,9 @@ import PackageDescription
 
 let package = Package(
   name: "SwiftProtobuf",
+  platforms: [
+    .watchOS(.v6)
+  ],
   products: [
     .executable(name: "protoc-gen-swift", targets: ["protoc-gen-swift"]),
     .library(name: "SwiftProtobuf", targets: ["SwiftProtobuf"]),
@@ -31,5 +34,5 @@ let package = Package(
     .testTarget(name: "SwiftProtobufPluginLibraryTests",
                 dependencies: ["SwiftProtobufPluginLibrary"]),
   ],
-  swiftLanguageVersions: [.v3, .v4, .v4_2, .version("5")]
+  swiftLanguageVersions: [.v4, .v4_2, .version("5")]
 )
